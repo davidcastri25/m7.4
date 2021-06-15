@@ -1,0 +1,55 @@
+* {
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.contenedor-rating {
+  width: 360px;
+  height: 65px;
+  /* Para centrar el elemento, tenemos que tener width y height definidas */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 3px solid rgb(58, 51, 51);
+  background-color: rgb(110, 189, 189);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icono-rating {
+  color: rgb(97, 96, 96);
+  cursor: pointer;
+  margin: 0px;
+}
+
+/*///////////////////////////////////////// HOVER /////////////////////////////////////////*/
+/* Si hacemos hover sobre el contenedor div, todos los iconos se nos iluminarán */
+.contenedor-rating:hover i {
+  color: rgba(247, 232, 97, 0.63);
+}
+
+/* Cuando hagamos hover sobre una estrella, se pintará del color indicado */
+.icono-rating:hover {
+  color: rgba(247, 232, 97, 0.63);
+}
+
+/* Todos los iconos DESPUÉS del que tiene hover se pintarán */
+
+.icono-rating:hover ~ i {
+  color: rgb(97, 96, 96);
+}
+/* 
+elemento1 ~ elemento2
+
+El símbolo ~ selecciona todos los elemento2 precedidos por un elemento1
+*/
+
+/*///////////////////////////////////////// CLICK /////////////////////////////////////////*/
+.click {
+  color: rgb(236, 236, 16);
+}
