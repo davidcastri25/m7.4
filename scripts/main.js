@@ -1,6 +1,10 @@
 //Creamos una HTML collection guardando todas las estrellas en una constante
-const estrellas = document.getElementsByClassName( "icono-rating");
+const estrellas = document.getElementsByClassName("icono-rating");
+//Guardamos en una constante el div contenedor de las estrellas
+const container = document.getElementById("contenedor-rating");
 
+
+/* ////////////////// EVENTO CLICK PARA LAS ESTRELLAS ////////////////// */
 //Recorremos la HTML collection y añadimos a cada estrella un evento click
 for (let i = 0; i < estrellas.length; i++){    
 
@@ -19,3 +23,19 @@ for (let i = 0; i < estrellas.length; i++){
         }    
     });
 }
+
+
+/* ////////////////// EVENTO CLICK PARA DESELECCIONAR ////////////////// */
+/* Node.contains() comprueba si un elemento está dentro de otro, y devuelve true o false. Lo tenemos que llamar en un elemento padre y pasarle el elemento que queremos comprobar como argumento */
+//Añadimos un evento click a toda la ventana
+window.addEventListener("click", (evento) => {
+    //Si el elemento clickado NO está dentro de container, sacaremos todos los eventos click de las estrellas
+    if (!container.contains(evento.target)) {
+        for (let i = 0; i < estrellas.length; i++) {
+            //Limpiamos clases click, si las hay y están fuera del rango seleccionado
+            if (estrellas[i].classList.contains("click")) {
+                estrellas[i].classList.remove("click");
+            }
+        }
+    }
+});
