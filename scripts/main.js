@@ -1,7 +1,12 @@
-//Creamos una HTML collection guardando todas las estrellas en una constante
-const estrellas = document.getElementsByClassName("icono-rating");
+/* Si quisieramos aplicar diversas estructuras de ratings en la página, no solo una, encapsularía todo el código en una función que tuviera como parámetro la ID del div container */
+
 //Guardamos en una constante el div contenedor de las estrellas
-const container = document.getElementById("contenedor-rating");
+//const container = document.getElementById("contenedor-rating");
+const container = document.querySelector("#contenedor-rating");
+
+//Creamos una HTML collection guardando todas las estrellas en una constante (las estrellas concretas contenidas en container)
+//const estrellas = document.getElementsByClassName("icono-rating");
+const estrellas = container.querySelectorAll(".icono-rating");
 
 
 /* ////////////////// EVENTO CLICK PARA LAS ESTRELLAS ////////////////// */
