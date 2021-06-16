@@ -31,11 +31,11 @@ for (let i = 0; i < estrellas.length; i++){
 window.addEventListener("click", (evento) => {
     //Si el elemento clickado NO está dentro de container, sacaremos todos los eventos click de las estrellas
     if (!container.contains(evento.target)) {
-        for (let i = 0; i < estrellas.length; i++) {
+        for (const estrella of estrellas) {
             //Limpiamos clases click, si las hay y están fuera del rango seleccionado
-            if (estrellas[i].classList.contains("click")) {
-                estrellas[i].classList.remove("click");
+            if (estrella.classList.contains("click")) {
+                estrella.classList.remove("click");
             }
-        }
+        }    
     }
 });
