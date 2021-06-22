@@ -2,28 +2,28 @@
 
 //Guardamos en una constante el div contenedor de las estrellas
 //const container = document.getElementById("contenedor-rating");
-const container = document.querySelector("#contenedor-rating");
+const CONTAINER = document.querySelector("#contenedor-rating");
 
 //Creamos una HTML collection guardando todas las estrellas en una constante (las estrellas concretas contenidas en container)
 //const estrellas = document.getElementsByClassName("icono-rating");
-const estrellas = container.querySelectorAll(".icono-rating");
+const ESTRELLAS = CONTAINER.querySelectorAll(".icono-rating");
 
 
 /* ////////////////// EVENTO CLICK PARA LAS ESTRELLAS ////////////////// */
 //Recorremos la HTML collection y añadimos a cada estrella un evento click
-for (let i = 0; i < estrellas.length; i++){    
+for (let i = 0; i < ESTRELLAS.length; i++){    
 
-    estrellas[i].addEventListener("click", () => {
+    ESTRELLAS[i].addEventListener("click", () => {
         //El evento click nos imprimirá en consola el índice (puntuación)
         console.log(i + 1);
 
-        for (let j = 0; j < estrellas.length; j++) {
+        for (let j = 0; j < ESTRELLAS.length; j++) {
             //Limpiamos clases click, si las hay y están fuera del rango seleccionado
-            if (estrellas[j].classList.contains("click") && j > i) {
-                estrellas[j].classList.remove("click");
+            if (ESTRELLAS[j].classList.contains("click") && j > i) {
+                ESTRELLAS[j].classList.remove("click");
             }
             else if (j <= i) {
-                estrellas[j].classList.add("click");
+                ESTRELLAS[j].classList.add("click");
             }    
         }    
     });
@@ -35,11 +35,11 @@ for (let i = 0; i < estrellas.length; i++){
 //Añadimos un evento click a toda la ventana
 window.addEventListener("click", (evento) => {
     //Si el elemento clickado NO está dentro de container, sacaremos todos los eventos click de las estrellas
-    if (!container.contains(evento.target)) {
-        for (const estrella of estrellas) {
+    if (!CONTAINER.contains(evento.target)) {
+        for (const ESTRELLA of ESTRELLAS) {
             //Limpiamos clases click, si las hay y están fuera del rango seleccionado
-            if (estrella.classList.contains("click")) {
-                estrella.classList.remove("click");
+            if (ESTRELLA.classList.contains("click")) {
+                ESTRELLA.classList.remove("click");
             }
         }    
     }
